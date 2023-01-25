@@ -4,13 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Group extends Base{
+
+    private User createdBy;
     private Set<User> userList;
     private Set<Expense> expenseList;
 
-    public Group(String id, String name) {
+    public Group(String id, String name, User createdBy) {
         super(id, name);
+        this.createdBy = createdBy;
         userList = new HashSet<>();
         expenseList = new HashSet<>();
+        addUser(createdBy);
     }
 
     public void addUser(User user) {
