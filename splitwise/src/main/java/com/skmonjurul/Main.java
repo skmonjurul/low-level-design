@@ -1,7 +1,6 @@
 package com.skmonjurul;
 
-import com.skmonjurul.splitwise.model.Group;
-import com.skmonjurul.splitwise.model.User;
+import com.skmonjurul.splitwise.model.*;
 import com.skmonjurul.splitwise.service.GroupService;
 import com.skmonjurul.splitwise.service.UserService;
 
@@ -33,5 +32,17 @@ public class Main {
         System.out.println(group.getName());
         group.getAllUsers()
                 .forEach(System.out::println);
+
+
+        Expense expense = new Expense.ExpenseBuilder()
+                .id("e1")
+                .description("Grocery")
+                .paidBy(user)
+                .amount(150)
+                .splitType(SplitType.EQUAL)
+                .build();
+
+        System.out.println(expense);
+
     }
 }
