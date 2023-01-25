@@ -1,8 +1,8 @@
 package com.skmonjurul.splitwise.model;
 
 public abstract class Base {
-    private String id;
-    private String name;
+    protected String id;
+    protected String name;
 
     public Base(String id, String name) {
         this.id = id;

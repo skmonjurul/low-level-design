@@ -1,17 +1,17 @@
 package com.skmonjurul.splitwise.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Group extends Base{
-//    private String id;
-//    private String name;
-
+    private Set<User> userList;
+    private Set<Expense> expenseList;
 
     public Group(String id, String name) {
         super(id, name);
+        userList = new HashSet<>();
+        expenseList = new HashSet<>();
     }
-    private Set<User> userList;
-    private Set<Expense> expenseList;
 
     public void addUser(User user) {
         userList.add(user);
@@ -40,6 +40,6 @@ public class Group extends Base{
     }
 
     public void editExpense(Expense expense) {
-
+        //todo edit expense
     }
 }

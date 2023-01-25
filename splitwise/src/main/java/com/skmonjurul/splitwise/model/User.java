@@ -1,8 +1,6 @@
 package com.skmonjurul.splitwise.model;
 
 public class User extends Base{
-//    private String id;
-//    private String name;
     private String phoneNumber;
     private String emailId;
 
@@ -26,5 +24,15 @@ public class User extends Base{
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
