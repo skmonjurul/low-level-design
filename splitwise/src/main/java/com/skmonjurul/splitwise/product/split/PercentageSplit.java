@@ -1,6 +1,8 @@
-package com.skmonjurul.splitwise.model;
+package com.skmonjurul.splitwise.product.split;
 
-public class PercentageSplit extends Split{
+import com.skmonjurul.splitwise.model.User;
+
+public class PercentageSplit extends Split {
     private double percentage;
 
     public PercentageSplit(User user) {

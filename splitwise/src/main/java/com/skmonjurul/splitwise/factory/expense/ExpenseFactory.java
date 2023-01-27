@@ -1,7 +1,7 @@
-package com.skmonjurul.splitwise.factory;
+package com.skmonjurul.splitwise.factory.expense;
 
-import com.skmonjurul.splitwise.product.Expense;
-import com.skmonjurul.splitwise.model.Split;
+import com.skmonjurul.splitwise.product.expense.Expense;
+import com.skmonjurul.splitwise.product.split.Split;
 import com.skmonjurul.splitwise.model.User;
 
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.skmonjurul.splitwise.model;
+package com.skmonjurul.splitwise.product.split;
+
+import com.skmonjurul.splitwise.model.User;
 
 public abstract class Split {
     private User user;

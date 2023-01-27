@@ -1,12 +1,9 @@
 package com.skmonjurul;
 
-import com.skmonjurul.splitwise.factory.ExpenseFactory;
+import com.skmonjurul.splitwise.factory.expense.ExpenseFactory;
 import com.skmonjurul.splitwise.model.*;
-import com.skmonjurul.splitwise.product.Expense;
-import com.skmonjurul.splitwise.service.ExpenseFactoryService;
-import com.skmonjurul.splitwise.service.ExpenseService;
-import com.skmonjurul.splitwise.service.GroupService;
-import com.skmonjurul.splitwise.service.UserService;
+import com.skmonjurul.splitwise.product.expense.Expense;
+import com.skmonjurul.splitwise.service.*;
 
 public class Main {
 
@@ -47,14 +44,16 @@ public class Main {
         Expense equalExpense = equalExpenseFactory.getExpense("e1", "Grocery", 150, user,
                 null);
 
+        BalanceService.updateBalance(equalExpense);
         expenseService.save(equalExpense);
         System.out.println(expenseService.findExpense("e1"));
 
 
-        ExpenseFactory UnequallyExpenseFactory = expenseFactoryService.createExpenseFactory(SplitType.UNEQUALLY);
-        Expense unequalExpense = UnequallyExpenseFactory.getExpense("e2", "Dinner", 1150, user1,
+        ExpenseFactory unequallyExpenseFactory = expenseFactoryService.createExpenseFactory(SplitType.UNEQUALLY);
+        Expense unequalExpense = unequallyExpenseFactory.getExpense("e2", "Dinner", 1150, user1,
                 null);
 
+        BalanceService.updateBalance(unequalExpense);
         expenseService.save(unequalExpense);
         System.out.println(expenseService.findExpense("e2"));
 
@@ -63,6 +62,7 @@ public class Main {
         Expense percentageExpense = percentageExpenseFactory.getExpense("e3", "Launch", 560, user,
                 null);
 
+        BalanceService.updateBalance(percentageExpense);
         expenseService.save(percentageExpense);
         System.out.println(expenseService.findExpense("e3"));
     }

@@ -1,8 +1,8 @@
-package com.skmonjurul.splitwise.factory;
+package com.skmonjurul.splitwise.factory.expense;
 
-import com.skmonjurul.splitwise.product.Expense;
+import com.skmonjurul.splitwise.product.expense.Expense;
 import com.skmonjurul.splitwise.model.SplitType;
-import com.skmonjurul.splitwise.product.UnequalExpense;
+import com.skmonjurul.splitwise.product.expense.UnequalExpense;
 
 public class UnequalExpenseFactory extends ExpenseFactory{
 

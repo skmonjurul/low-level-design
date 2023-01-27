@@ -1,4 +1,4 @@
-package com.skmonjurul.splitwise.product;
+package com.skmonjurul.splitwise.product.expense;
 
 import com.skmonjurul.splitwise.model.SplitType;
 
