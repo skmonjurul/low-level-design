@@ -9,6 +9,6 @@ public class UnequalSplitFactory extends SplitFactory {
 
     @Override
     protected Split createSplit(User user) {
-        return new UnequalSplit(user);
+        return null;
     }
 }

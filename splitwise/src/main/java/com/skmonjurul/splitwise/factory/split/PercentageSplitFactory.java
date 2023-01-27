@@ -7,6 +7,6 @@ import com.skmonjurul.splitwise.product.split.Split;
 public class PercentageSplitFactory extends SplitFactory{
     @Override
     protected Split createSplit(User user) {
-        return new PercentageSplit(user);
+        return null;
     }
 }

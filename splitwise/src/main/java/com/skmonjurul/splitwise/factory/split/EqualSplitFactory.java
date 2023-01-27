@@ -10,6 +10,6 @@ public class EqualSplitFactory extends SplitFactory {
 
     @Override
     protected Split createSplit(User user) {
-        return new EqualSplit(user);
+        return null;
     }
 }

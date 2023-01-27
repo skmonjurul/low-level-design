@@ -4,7 +4,7 @@ import com.skmonjurul.splitwise.model.User;
 
 public abstract class Split {
     private User user;
-    private double amount;
+    protected double amount;
 
     public Split(User user) {
         this.user = user;

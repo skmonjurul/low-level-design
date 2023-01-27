@@ -5,7 +5,8 @@ import com.skmonjurul.splitwise.product.split.Split;
 
 public class UnequalSplit extends Split {
 
-    public UnequalSplit(User user) {
+    public UnequalSplit(User user, double amount) {
         super(user);
+        this.amount = amount;
     }
 }

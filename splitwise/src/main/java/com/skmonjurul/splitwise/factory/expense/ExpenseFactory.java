@@ -15,10 +15,12 @@ public abstract class ExpenseFactory {
         expense.setDescription(description);
         expense.setAmount(amount);
         expense.setPaidBy(paidBy);
+        updateSplitAmount(splitList, amount);
         expense.setSplitList(splitList);
         expense.validate();
         return expense;
     }
 
     protected abstract Expense createExpense();
+    protected abstract void updateSplitAmount(List<Split> splitList, double amount);
 }
