@@ -1,7 +1,6 @@
 package com.skmonjurul;
 
 import com.skmonjurul.splitwise.factory.expense.ExpenseFactory;
-import com.skmonjurul.splitwise.factory.split.SplitFactory;
 import com.skmonjurul.splitwise.model.*;
 import com.skmonjurul.splitwise.product.expense.Expense;
 import com.skmonjurul.splitwise.product.split.EqualSplit;
@@ -19,9 +18,9 @@ public class Main {
 
     private static UserService userService;
     private static GroupService groupService;
-
     private static ExpenseService expenseService;
     private static ExpenseFactoryService expenseFactoryService;
+    private static BalanceService balanceService;
 
 
     public static void init() {
@@ -29,14 +28,19 @@ public class Main {
         groupService = new GroupService();
         expenseService = new ExpenseService();
         expenseFactoryService = new ExpenseFactoryService();
+        balanceService = new BalanceService();
     }
 
     public static List<User> createUser() {
-        return Arrays.asList(
+        List<User> userList = Arrays.asList(
         new User("u1", "Sk Monjurul Haque", "9609696421", "monjurulhaque2011@gmail.com"),
-        new User("U2", "Sampath", "7076924582", "sampath.kumar@gmail.com"),
-        new User("U3", "Haneef Mohamed", "7078926584", "haneef.mohmed@gmail.com"),
-        new User("U4", "Arun Kalleda", "7876424889", "arun.kalleda@gmail.com"));
+        new User("u2", "Sampath", "7076924582", "sampath.kumar@gmail.com"),
+        new User("u3", "Haneef Mohamed", "7078926584", "haneef.mohmed@gmail.com"),
+        new User("u4", "Arun Kalleda", "7876424889", "arun.kalleda@gmail.com"));
+
+        userList.forEach(user -> userService.save(user));
+
+        return userList;
     }
 
     public static Group createGroup() {
@@ -53,10 +57,12 @@ public class Main {
     public static void show(String[] input) {
         if (input.length == 1) {
             //todo show balance for all user
+            balanceService.showBalanceForAllUsers(groupService.findGroup("g1").getAllUsers());
         }
         else {
             String userId = input[1];
             // todo show balance for mentioned user
+            balanceService.showBalance(userService.findUser(userId));
         }
     }
 
@@ -91,7 +97,7 @@ public class Main {
                 userService.findUser(paidByUserId), splitList);
 
         expenseService.save(equalExpense);
-
+        balanceService.updateBalance(equalExpense);
     }
 
     public static void unequalExpense(String[] input, int noOfUser) {
@@ -109,7 +115,7 @@ public class Main {
                 userService.findUser(paidByUserId), splitList);
 
         expenseService.save(unequallyExpense);
-
+        balanceService.updateBalance(unequallyExpense);
 
     }
 
@@ -128,6 +134,7 @@ public class Main {
                 userService.findUser(paidByUserId), splitList);
 
         expenseService.save(percentageExpense);
+        balanceService.updateBalance(percentageExpense);
 
 
     }
