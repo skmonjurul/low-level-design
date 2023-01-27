@@ -1,6 +1,6 @@
 package com.skmonjurul.splitwise.model;
 
-import com.skmonjurul.splitwise.product.Expense;
+import com.skmonjurul.splitwise.product.expense.Expense;
 
 import java.util.HashSet;
 import java.util.Set;

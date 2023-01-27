@@ -1,6 +1,6 @@
 package com.skmonjurul.splitwise.repo;
 
-import com.skmonjurul.splitwise.product.Expense;
+import com.skmonjurul.splitwise.product.expense.Expense;
 
 import java.util.HashMap;
 import java.util.Map;

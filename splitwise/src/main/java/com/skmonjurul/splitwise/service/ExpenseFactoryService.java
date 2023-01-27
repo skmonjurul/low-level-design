@@ -1,9 +1,9 @@
 package com.skmonjurul.splitwise.service;
 
-import com.skmonjurul.splitwise.factory.EqualExpenseFactory;
-import com.skmonjurul.splitwise.factory.ExpenseFactory;
-import com.skmonjurul.splitwise.factory.PercentageExpenseFactory;
-import com.skmonjurul.splitwise.factory.UnequalExpenseFactory;
+import com.skmonjurul.splitwise.factory.expense.EqualExpenseFactory;
+import com.skmonjurul.splitwise.factory.expense.ExpenseFactory;
+import com.skmonjurul.splitwise.factory.expense.PercentageExpenseFactory;
+import com.skmonjurul.splitwise.factory.expense.UnequalExpenseFactory;
 import com.skmonjurul.splitwise.model.SplitType;
 
 public class ExpenseFactoryService {
