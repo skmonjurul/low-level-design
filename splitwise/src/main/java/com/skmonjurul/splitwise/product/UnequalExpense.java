@@ -1,6 +1,8 @@
-package com.skmonjurul.splitwise.model;
+package com.skmonjurul.splitwise.product;
 
-public class UnequalExpense extends Expense{
+import com.skmonjurul.splitwise.model.SplitType;
+
+public class UnequalExpense extends Expense {
 
     public UnequalExpense(SplitType splitType) {
         super(splitType);

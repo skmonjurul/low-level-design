@@ -1,6 +1,6 @@
 package com.skmonjurul.splitwise.service;
 
-import com.skmonjurul.splitwise.model.Expense;
+import com.skmonjurul.splitwise.product.Expense;
 import com.skmonjurul.splitwise.repo.ExpenseRepo;
 
 public class ExpenseService {
