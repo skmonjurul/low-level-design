@@ -14,6 +14,9 @@ public abstract class ParkingSpot {
     }
 
     public void assignVehicle(Vehicle vehicle) {
+        if (!this.parkingSpotStatus.equals(ParkingSpotStatus.FREE))
+            // todo throw exception
+
         this.vehicle = vehicle;
         parkingSpotStatus = ParkingSpotStatus.OCCUPIED;
     }
