@@ -2,7 +2,6 @@ package com.skmonjurul.parkinglot;
 
 import com.skmonjurul.parkinglot.spot.ParkingSpotType;
 
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ParkingDisplayBoard {

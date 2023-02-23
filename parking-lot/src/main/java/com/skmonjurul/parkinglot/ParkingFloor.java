@@ -43,7 +43,10 @@ public class ParkingFloor {
 
 
     public void assignVehicleToSpot(Vehicle vehicle, ParkingSpot parkingSpot) {
+        // assign the vehicle if the spot is free
+        // after assigning mark the spot occupied
         parkingSpot.assignVehicle(vehicle);
+
         parkingDisplayBoard.decrementCount(parkingSpot.getParkingSpotType());
         // todo for display we can make it observer pattern
         // todo parkingDisplay board will only be responsible for displaying
@@ -53,6 +56,8 @@ public class ParkingFloor {
     }
 
     public void removeVehicleFromSpot(ParkingSpot parkingSpot) {
+        // remove the vehicle
+        // mark the spot available
         parkingSpot.removeVehicle();
         parkingDisplayBoard.incrementCount(parkingSpot.getParkingSpotType());
         // todo for display we can make it observer pattern
