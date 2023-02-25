@@ -1,6 +1,6 @@
 package com.skmonjurul.splitwise.repo;
 
-public interface Driver<T> {
-    void save(T t);
-    T findById(String id);
+public interface Driver<T, K> {
+    void save(K k, T t);
+    T findById(K k);
 }

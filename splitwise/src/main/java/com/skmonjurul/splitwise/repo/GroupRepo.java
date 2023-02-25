@@ -9,24 +9,20 @@ import java.util.Map;
 public class GroupRepo {
 //    private static Map<String, Group> groupMap = new HashMap<>();
 
-    private Driver<Group> driver;
+    private Driver<Group, String> driver;
 
     public GroupRepo() {
-        driver = new MapDriver<Group>();
+        driver = new MapDriver<>();
     }
 
     public void save(Group group) {
-//        groupMap.put(group.getId(), group);
-        driver.save(group);
+        driver.save(group.getId(), group);
     }
 
     public Group findById(String groupId) {
 //        if (!groupMap.containsKey(groupId)) {
 //            //todo throw exception
 //        }
-//
-//        return groupMap.get(groupId);
-
         return driver.findById(groupId);
     }
 }

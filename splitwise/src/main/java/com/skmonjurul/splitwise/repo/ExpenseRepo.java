@@ -9,14 +9,13 @@ public class ExpenseRepo {
 
 //    private static Map<String, Expense> expenseMap = new HashMap<>();
 
-    private Driver<Expense> driver;
+    private Driver<Expense, String> driver;
 
     public ExpenseRepo() {
-        driver = new MapDriver<Expense>();
+        driver = new MapDriver<>();
     }
     public void save(Expense expense) {
-//        expenseMap.put(expense.getId(), expense);
-        driver.save(expense);
+        driver.save(expense.getId(), expense);
     }
 
 
@@ -25,8 +24,6 @@ public class ExpenseRepo {
 //            //todo throw exception
 //        }
 //
-//        return expenseMap.get(expenseId);
-
         return driver.findById(expenseId);
     }
 }

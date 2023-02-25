@@ -9,24 +9,20 @@ import java.util.Map;
 public class UserRepo {
 //    private static Map<String, User> userMap = new HashMap<>();
 
-    private Driver<User> driver;
+    private Driver<User, String> driver;
 
     public UserRepo() {
         driver = new MapDriver<>();
     }
 
     public void save(User user) {
-//        userMap.put(user.getId(), user);
-        driver.save(user);
+        driver.save(user.getId(), user);
     }
 
     public User findById(String userId) {
 //        if (!userMap.containsKey(userId)) {
 //            //todo throws exception
 //        }
-//
-//        return userMap.get(userId);
-
         return driver.findById(userId);
     }
 }

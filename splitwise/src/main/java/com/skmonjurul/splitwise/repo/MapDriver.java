@@ -5,15 +5,15 @@ import com.skmonjurul.splitwise.model.Base;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapDriver<T extends Base> implements Driver<T>{
-    Map<String, T> tMap = new HashMap<>();
+public class MapDriver<T, K> implements Driver<T, K>{
+    Map<K, T> tMap = new HashMap<>();
     @Override
-    public void save(T t) {
-        tMap.put(t.getId(), t);
+    public void save(K k, T t) {
+        tMap.put(k, t);
     }
 
     @Override
-    public T findById(String id) {
-        return tMap.get(id);
+    public T findById(K k) {
+        return tMap.get(k);
     }
 }
