@@ -4,7 +4,8 @@ import com.skmonjurul.splitwise.product.split.Split;
 
 import java.util.List;
 
-public class EqualSplitBehaviour implements SplitBehaviour {
+public class PercentageEqualSplitBehaviour implements SplitBehaviour{
+
     @Override
     public void updateSplitAmount(List<Split> splitList, double amount) {
 

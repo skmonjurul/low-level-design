@@ -8,7 +8,7 @@ public abstract class Expense {
     protected SplitBehaviour splitBehaviour;
 
     public void updateSplitAmount(List<Split> splitList, double amount) {
-        splitBehaviour.updateSplitBehaviour(splitList, amount);
+        splitBehaviour.updateSplitAmount(splitList, amount);
     }
     public void validate() {
         splitBehaviour.validate();
