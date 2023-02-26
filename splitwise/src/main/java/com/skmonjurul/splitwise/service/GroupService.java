@@ -8,8 +8,8 @@ public class GroupService {
 
     private GroupRepo groupRepo;
 
-    public GroupService() {
-        groupRepo = new GroupRepo();
+    public GroupService(GroupRepo groupRepo) {
+        this.groupRepo = groupRepo;
     }
 
     public void save(Group group) {

@@ -13,8 +13,8 @@ public class BalanceService {
 
     private UserService userService;
 
-    public BalanceService() {
-        userService = new UserService();
+    public BalanceService(UserService userService) {
+        this.userService = userService;
     }
 
     public void updateBalance(Expense expense) {

@@ -11,8 +11,8 @@ public class UserRepo {
 
     private Driver<User, String> driver;
 
-    public UserRepo() {
-        driver = new MapDriver<>();
+    public UserRepo(Driver<User, String> driver) {
+        this.driver = driver;
     }
 
     public void save(User user) {

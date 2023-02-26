@@ -11,8 +11,8 @@ public class ExpenseRepo {
 
     private Driver<Expense, String> driver;
 
-    public ExpenseRepo() {
-        driver = new MapDriver<>();
+    public ExpenseRepo(Driver<Expense, String> driver) {
+        this.driver = driver;
     }
     public void save(Expense expense) {
         driver.save(expense.getId(), expense);

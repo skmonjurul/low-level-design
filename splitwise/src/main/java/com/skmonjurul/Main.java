@@ -7,6 +7,7 @@ import com.skmonjurul.splitwise.product.split.EqualSplit;
 import com.skmonjurul.splitwise.product.split.PercentageSplit;
 import com.skmonjurul.splitwise.product.split.Split;
 import com.skmonjurul.splitwise.product.split.UnequalSplit;
+import com.skmonjurul.splitwise.repo.*;
 import com.skmonjurul.splitwise.service.*;
 
 import java.util.ArrayList;
@@ -22,13 +23,32 @@ public class Main {
     private static ExpenseFactoryService expenseFactoryService;
     private static BalanceService balanceService;
 
+    private static ExpenseRepo expenseRepo;
+    private static GroupRepo groupRepo;
+    private static UserRepo userRepo;
+
+    private static Driver<User, String> userDriver;
+    private static Driver<Group, String> groupDriver;
+    private static Driver<Expense, String> expenseDriver;
+
 
     public static void init() {
-        userService = new UserService();
-        groupService = new GroupService();
-        expenseService = new ExpenseService();
+        userDriver = new MapDriver<>();
+        groupDriver = new MapDriver<>();
+        expenseDriver = new MapDriver<>();
+
+        expenseRepo = new ExpenseRepo(expenseDriver);
+        userRepo = new UserRepo(userDriver);
+        groupRepo = new GroupRepo(groupDriver);
+
+
+        userService = new UserService(userRepo);
+        groupService = new GroupService(groupRepo);
+        expenseService = new ExpenseService(expenseRepo);
+
+
         expenseFactoryService = new ExpenseFactoryService();
-        balanceService = new BalanceService();
+        balanceService = new BalanceService(userService);
     }
 
     public static List<User> createUser() {

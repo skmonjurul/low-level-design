@@ -11,8 +11,8 @@ public class GroupRepo {
 
     private Driver<Group, String> driver;
 
-    public GroupRepo() {
-        driver = new MapDriver<>();
+    public GroupRepo(Driver<Group, String> driver) {
+        this.driver = driver;
     }
 
     public void save(Group group) {
