@@ -1,11 +1,11 @@
-package com.skmonjurul.splitwise.repo;
+package com.skmonjurul.driver;
 
-import com.skmonjurul.splitwise.model.Base;
+import com.skmonjurul.driver.Driver;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapDriver<T, K> implements Driver<T, K>{
+public class MapDriver<T, K> implements Driver<T, K> {
     Map<K, T> tMap = new HashMap<>();
     @Override
     public void save(K k, T t) {

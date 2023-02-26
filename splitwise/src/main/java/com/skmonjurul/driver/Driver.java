@@ -1,4 +1,4 @@
-package com.skmonjurul.splitwise.repo;
+package com.skmonjurul.driver;
 
 public interface Driver<T, K> {
     void save(K k, T t);
