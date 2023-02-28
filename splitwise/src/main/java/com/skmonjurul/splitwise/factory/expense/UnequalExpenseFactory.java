@@ -18,10 +18,4 @@ public class UnequalExpenseFactory extends ExpenseFactory{
     protected Expense createExpense() {
         return new UnequalExpense(SplitType.UNEQUALLY);
     }
-
-    @Override
-    protected void updateSplitAmount(List<Split> splitList, double amount) {
-        // do nothing
-        // no need to update as already updated
-    }
 }

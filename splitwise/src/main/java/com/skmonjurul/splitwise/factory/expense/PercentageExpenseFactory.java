@@ -18,12 +18,4 @@ public class PercentageExpenseFactory extends ExpenseFactory{
     protected Expense createExpense() {
         return new PercentageExpense(SplitType.PERCENTAGE);
     }
-
-    @Override
-    protected void updateSplitAmount(List<Split> splitList, double amount) {
-        for(Split split : splitList) {
-            PercentageSplit percentSplit = (PercentageSplit) split;
-            split.setAmount((amount * percentSplit.getPercentage()) / 100.0);
-        }
-    }
 }
