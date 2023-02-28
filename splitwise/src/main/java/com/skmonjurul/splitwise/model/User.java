@@ -23,33 +23,21 @@ public class User extends Base{
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 
     public String getEmailId() {
         return emailId;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
 
     public Balance getBalance() {
         return balance;
     }
 
-    public void setBalance(Balance balance) {
-        this.balance = balance;
-    }
 
     public Map<String, Double> getBalanceSheet() {
         return balanceSheet;
     }
 
-    public void setBalanceSheet(Map<String, Double> balanceSheet) {
-        this.balanceSheet = balanceSheet;
-    }
 
     @Override
     public String toString() {

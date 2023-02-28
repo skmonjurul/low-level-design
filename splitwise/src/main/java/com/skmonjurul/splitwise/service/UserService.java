@@ -7,8 +7,8 @@ public class UserService {
 
     private UserRepo userRepo;
 
-    public UserService() {
-        userRepo = new UserRepo();
+    public UserService(UserRepo userRepo) {
+        this.userRepo = userRepo;
     }
 
     public void save(User user) {

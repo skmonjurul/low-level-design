@@ -6,8 +6,8 @@ import com.skmonjurul.splitwise.repo.ExpenseRepo;
 public class ExpenseService {
     private ExpenseRepo expenseRepo;
 
-    public ExpenseService() {
-        this.expenseRepo = new ExpenseRepo();
+    public ExpenseService(ExpenseRepo expenseRepo) {
+        this.expenseRepo = expenseRepo;
     }
 
     public void save(Expense expense) {
