@@ -13,21 +13,26 @@ public class ParkingLot {
 
     private static ParkingLot instance;
 
-    private ParkingLot() {}
+    private ParkingLot(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
 
-    public static ParkingLot getInstance() {
+    public static ParkingLot getInstance(String name, String address) {
         if (instance == null) {
             synchronized (ParkingLot.class) {
                 if (instance == null) {
-                    instance = new ParkingLot();
+                    instance = new ParkingLot(name, address);
                 }
             }
         }
         return instance;
     }
 
-    public ParkingTicket getParkingTicket(Vehicle vehicle) {
-        return null;
+    public ParkingTicket getParkingTicket(Vehicle vehicle, EntryGate entryGate) {
+        // todo may be we can get entry gate id
+        // then we need to loop through the list to find the entry gate
+        return entryGate.getParkingTicket(vehicle);
     }
 
 
